@@ -55,7 +55,7 @@ exports.postAvatar = async (req, res) => {
     const buffer = await sharp(req.file.buffer)
       .resize({width : 256, height : 256})
       .png()
-      .toBuffer();
+      .toBuffer()
       req.user.avatar = buffer;
       await req.user.save();
       res.send({ success: "La photo de profil a été modifiée" });
@@ -72,6 +72,7 @@ exports.serveAvatar = (req, res) => {
       res.redirect(
         "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
       );
+      return
     }
     res.setHeader("Content-Type", "image/png");
     res.setHeader(

@@ -8,10 +8,11 @@ const upload = multer ()
 const router = express.Router();
 
 /*POST*/
-router.post('/api/store/add', auth, upload.array('photos', 5), storeControler.add)
+router.post('/api/store/add', auth, upload.array('photos', 5), storeControler.add);
 
 /*GET*/
-router.get('/api/store/info', auth, storeControler.info)
+router.get('/api/store/info/:page', storeControler.info);
+router.get('/api/store/avatar/:store/:img', storeControler.getAvatar);
 
 /*PATCH*/
 
