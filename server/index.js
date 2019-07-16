@@ -7,7 +7,9 @@ const cookieParser = require('cookie-parser');
 
 
 const app = express();
-app.use(history());
+app.use(history({
+    verbose: true
+}));
 
 const port = process.env.PORT || 3000; 
 
