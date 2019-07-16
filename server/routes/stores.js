@@ -13,6 +13,8 @@ router.post('/api/store/add', auth, upload.array('photos', 5), storeControler.ad
 /*GET*/
 router.get('/api/store/info/:page', storeControler.info);
 router.get('/api/store/avatar/:store/:img', storeControler.getAvatar);
+router.get('/api/store/search/:name', storeControler.search);
+router.get('/api/store/search/info/:id', storeControler.getSearchStore);
 
 /*PATCH*/
 

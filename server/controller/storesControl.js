@@ -42,16 +42,20 @@ exports.info = async (req, res) => {
   try {
     const page = req.params.page;
     const store = await Store.find()
-    .limit(3)
-    .skip(parseInt(page -1) * 3)
+    .limit(6)
+    .skip(parseInt(page -1) * 6)
     .sort({createdAt : -1})
     
     if (!store) {
       throw "Aucun restaurant ne correspond à vos critères de recheche";
       return;
     }
-    const count = await Store.find().countDocuments()
-    res.send({ success: store, count : count });
+  
+    store.forEach(e => {
+      e.photos[0].picture = undefined;
+    });
+
+    res.send({ success: store,});
   } catch (err) {
     res.send({ error: err });
   }
@@ -66,6 +70,35 @@ exports.getAvatar = async (req, res) => {
     res.send(photo.picture.buffer);
   } catch (err) {
     console.log(err);
+    res.send({ error: err });
+  }
+};
+
+exports.search = async (req,res) => {
+  try {
+    const searchStore = await Store.find({$text: {$search: req.params.name}})
+    const returnStore = [];
+    searchStore.forEach(e => 
+      returnStore.push({name : e.name, id : e._id, adresse : e.adresse})
+    )
+    res.send({success : returnStore})
+  } catch (err) {
+    console.log(err)
+    res.send({error : err})
+  }
+}
+
+exports.getSearchStore= async (req, res) => {
+  try {
+    const store = await Store.findOne({_id : req.params.id})
+   
+    if (!store) {
+      throw "Aucun restaurant ne correspond à vos critères de recheche";
+      return;
+    }
+  
+    res.send({ success: store,});
+  } catch (err) {
     res.send({ error: err });
   }
 };
