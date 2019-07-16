@@ -1,13 +1,12 @@
 require("./mongoDB/mongoose")
 const express = require("express");
-const history = require('connect-history-api-fallback');
+// const history = require('connect-history-api-fallback');
 const userRouter = require('./routes/users');
 const storeRouter = require('./routes/stores')
 const cookieParser = require('cookie-parser');
 
-
 const app = express();
-app.use(history());
+// app.use(history());
 
 const port = process.env.PORT || 3000; 
 
