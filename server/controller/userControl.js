@@ -68,12 +68,12 @@ exports.postAvatar = async (req, res) => {
 /*GET*/
 exports.serveAvatar = (req, res) => {
   try {
-    // if (!req.user.avatar) {
-    //   res.redirect(
-    //     "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-    //   );
-    //   return
-    // }
+    if (!req.user.avatar) {
+      res.redirect(
+        "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+      );
+      return
+    }
     res.setHeader("Content-Type", "image/png");
     res.setHeader(
       "Content-disposition",
