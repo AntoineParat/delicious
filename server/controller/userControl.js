@@ -68,20 +68,20 @@ exports.postAvatar = async (req, res) => {
 /*GET*/
 exports.serveAvatar = (req, res) => {
   try {
-    if (!req.user.avatar) {
+    // if (!req.user.avatar) {
       res.redirect(
         "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-      );
-      return
-    }
-    res.setHeader("Content-Type", "image/png");
-    res.setHeader(
-      "Content-disposition",
-      `filename="${req.user.name}-avatar.png"`
-    );
+       );
+    //   return
+    // }
+    // res.setHeader("Content-Type", "image/png");
+    // res.setHeader(
+    //   "Content-disposition",
+    //   `filename="${req.user.name}-avatar.png"`
+    // );
     /*DOWNLOAD AVATAR*/
     //res.setHeader('Content-disposition', `attachment; filename="${req.user.name}-avatar.png" `);
-    res.send(req.user.avatar);
+    // res.send(req.user.avatar);
   } catch (err) {
     res.status(404).send(err);
   }
