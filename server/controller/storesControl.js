@@ -96,8 +96,8 @@ exports.getSearchStore= async (req, res) => {
       throw "Aucun restaurant ne correspond à vos critères de recheche";
       return;
     }
-  
     res.send({ success: store,});
+    console.log(store)
   } catch (err) {
     res.send({ error: err });
   }
