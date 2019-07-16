@@ -10,8 +10,8 @@ const port = process.env.PORT || 3000;
 app.use(cookieParser());
 
 /* UNCOMMENT FOR PRODUCTION */
-// app.use(express.static(__dirname + '/public/' ));
-// app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'))
+app.use(express.static(__dirname + '/public/' ));
+app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'))
 
 app.use(express.json()) //automatically parse upcoming JSON file
 
