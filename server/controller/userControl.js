@@ -66,30 +66,22 @@ exports.postAvatar = async (req, res) => {
 
 
 /*GET*/
-exports.serveAvatar = async (req, res) => {
+exports.serveAvatar = (req, res) => {
   try {
-    // if (!req.user.avatar) {
-    //   res.redirect(
-    //     "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-    //    );
-    //   return
-    // }
-    // res.setHeader("Content-Type", "image/png");
-    // res.setHeader(
-    //   "Content-disposition",
-    //   `filename="${req.user.name}-avatar.png"`
-    // );
-    // /*DOWNLOAD AVATAR*/
-    // res.setHeader('Content-disposition', `attachment; filename="${req.user.name}-avatar.png" `);
-    // res.send(req.user.avatar);
-    const user = await User.findOne({_id : req.params.id});
-    const avatar = user.avatar;
+    if (!req.user.avatar) {
+      res.redirect(
+        "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+       );
+      return
+    }
     res.setHeader("Content-Type", "image/png");
     res.setHeader(
       "Content-disposition",
-      `filename="avatar.png"` 
-    )
-    res.send(avatar.buffer)
+      `filename="${req.user.name}-avatar.png"`
+    );
+    /*DOWNLOAD AVATAR*/
+    // res.setHeader('Content-disposition', `attachment; filename="${req.user.name}-avatar.png" `);
+    res.send(req.user.avatar);
   } catch (err) {
     res.status(404).send(err);
   }
