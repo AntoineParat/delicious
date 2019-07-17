@@ -3,16 +3,20 @@ const express = require("express");
 const history = require('connect-history-api-fallback');
 const userRouter = require('./routes/users');
 const storeRouter = require('./routes/stores')
-const avatarRouter = require ('./routes/avatar');
+// const avatarRouter = require ('./routes/avatar');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-app.use(avatarRouter)
-app.use(history());
+// app.use(avatarRouter)
 
 const port = process.env.PORT || 3000; 
 
 app.use(cookieParser());
+
+app.use(userRouter);
+app.use(storeRouter);
+
+app.use(history());
 
 /* UNCOMMENT FOR PRODUCTION */
 app.use(express.static(__dirname + '/public/' ));
@@ -20,8 +24,5 @@ app.use(express.static(__dirname + '/public/' ));
 
 app.use(express.json()) //automatically parse upcoming JSON file
 
-
-app.use(userRouter);
-app.use(storeRouter);
 
 app.listen(port, () => console.log('router is up on port' + port))
