@@ -14,7 +14,7 @@ router.post('/api/user/avatar',auth, upload.single('avatar'), userControler.post
 
 /*GET*/
 router.get('/api/user/info', auth, userControler.getInfo);
-router.get('/api/user/avatar',auth, userControler.serveAvatar);
+router.get('/api/user/avatar/:id', userControler.serveAvatar);
 router.get('/api/user/logout', userControler.logout);
 
 /*PATCH*/
