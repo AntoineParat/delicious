@@ -3,9 +3,11 @@ const express = require("express");
 const history = require('connect-history-api-fallback');
 const userRouter = require('./routes/users');
 const storeRouter = require('./routes/stores')
+const avatarRouter = require ('./routes/avatar');
 const cookieParser = require('cookie-parser');
 
 const app = express();
+app.use(avatarRouter)
 app.use(history());
 
 const port = process.env.PORT || 3000; 
@@ -13,7 +15,7 @@ const port = process.env.PORT || 3000;
 app.use(cookieParser());
 
 /* UNCOMMENT FOR PRODUCTION */
-app.use(express.static(__dirname + '/public/' ));
+// app.use(express.static(__dirname + '/public/' ));
 //  app.get('*', (req,res) => res.sendFile(__dirname + '/public/index.html'))
 
 app.use(express.json()) //automatically parse upcoming JSON file
