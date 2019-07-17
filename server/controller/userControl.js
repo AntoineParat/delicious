@@ -87,7 +87,7 @@ exports.serveAvatar = async (req, res) => {
     res.setHeader("Content-Type", "image/png");
     res.setHeader(
       "Content-disposition",
-      `filename="${req.user.name}-avatar.png"` 
+      `filename="avatar.png"` 
     )
     res.send(avatar.buffer)
   } catch (err) {
