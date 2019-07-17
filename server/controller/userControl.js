@@ -89,7 +89,7 @@ exports.serveAvatar = async (req, res) => {
       "Content-disposition",
       `filename="${req.user.name}-avatar.png"` 
     )
-    res.send(avatar)
+    res.send(avatar.buffer)
   } catch (err) {
     res.status(404).send(err);
   }
