@@ -13,16 +13,18 @@ const port = process.env.PORT || 3000;
 
 app.use(cookieParser());
 
+app.use(express.json()) //automatically parse upcoming JSON file
+
 app.use(userRouter);
 app.use(storeRouter);
 
 app.use(history());
 
 /* UNCOMMENT FOR PRODUCTION */
-app.use(express.static(__dirname + '/public/' ));
+ app.use(express.static(__dirname + '/public/' ));
 //  app.get('*', (req,res) => res.sendFile(__dirname + '/public/index.html'))
 
-app.use(express.json()) //automatically parse upcoming JSON file
+
 
 
 app.listen(port, () => console.log('router is up on port' + port))
