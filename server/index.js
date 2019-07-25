@@ -3,11 +3,10 @@ const express = require("express");
 const history = require('connect-history-api-fallback');
 const userRouter = require('./routes/users');
 const storeRouter = require('./routes/stores')
-// const avatarRouter = require ('./routes/avatar');
+const commentsRouter = require ('./routes/commentaire');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-// app.use(avatarRouter)
 
 const port = process.env.PORT || 3000; 
 
@@ -17,6 +16,7 @@ app.use(express.json()) //automatically parse upcoming JSON file
 
 app.use(userRouter);
 app.use(storeRouter);
+app.use(commentsRouter);
 
 app.use(history());
 

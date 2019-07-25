@@ -16,10 +16,13 @@ router.post('/api/user/avatar',auth, upload.single('avatar'), userControler.post
 router.get('/api/user/info', auth, userControler.getInfo);
 router.get('/api/user/avatar', auth, userControler.serveAvatar);
 router.get('/api/user/logout', userControler.logout);
+router.get('/api/user/sendMail', userControler.sendMail)
+router.get('/api/user/getName', userControler.getName);
 
 /*PATCH*/
 router.patch('/api/user/info', auth, userControler.patchInfo);
 router.patch('/api/user/password', auth, userControler.password);
+router.patch('/api/user/resetPassword', userControler.resetPassword);
 router.patch('/api/user/avatar', auth, userControler.patchDeleteAvatar);
 
 
