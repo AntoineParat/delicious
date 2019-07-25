@@ -112,7 +112,7 @@ exports.userStores = async (req, res) => {
       .limit(3)
       .skip(parseInt((page - 1) * 3))
       .sort({ createdAt: -1 });
-    if (!stores) {
+    if (stores.length === 0) {
       throw "Vous n'avez ajouté aucun restaurant pour l'instant";
       return;
     }

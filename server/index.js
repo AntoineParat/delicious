@@ -21,7 +21,7 @@ app.use(commentsRouter);
 app.use(history());
 
 /* UNCOMMENT FOR PRODUCTION */
- app.use(express.static(__dirname + '/public/' ));
+app.use(express.static(__dirname + '/public/' ));
 //  app.get('*', (req,res) => res.sendFile(__dirname + '/public/index.html'))
 
 

@@ -96,10 +96,6 @@ exports.getUserComments = async (req, res) => {
       .skip(parseInt(page - 1) * 3)
       .sort({ updatedAt : -1 });
       
-    if (!userComments) {
-      throw "Vous n'avez laissé aucun commentaire pour l'instant";
-      return;
-    }
     res.send({ success: userComments, count });
   } catch (err) {
     console.log(err);
