@@ -1,4 +1,8 @@
 # Foodelicious
+
+![enter image description here](https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/118913530/original/051672fddc3634fc420f2721ad510675d3a3c099/develop-a-mevn-stack-app.png)
+
+
 Hi ! I built this application using **MongoDB, Express.js, Vue.js and Node.js**. <br> 
 The goal is simple : you can add, rate and review restaurants.
 
