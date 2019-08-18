@@ -1,5 +1,5 @@
 # Foodelicious
-Hi ! I built this application using **MongoDB, Express.js, Vue.js and Node.js**. 
+Hi ! I built this application using **MongoDB, Express.js, Vue.js and Node.js**. <br> 
 The goal is simple : you can add, rate and review restaurants.
 
 # Features
