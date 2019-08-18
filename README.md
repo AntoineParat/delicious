@@ -8,7 +8,7 @@ The goal is simple : you can add, rate and review restaurants.
 
 # Features
 
-Here are the main features covered by this app : 
+Here are some of the main features covered by this app : 
  
 - Full Stack application 
 	> **Vue.js** on client side / **Node.js** on server side.
