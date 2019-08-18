@@ -12,22 +12,28 @@ The goal is simple : you can add, rate and review restaurants.
 -  Server Deployment
 	> Deployed on [Heroku](https://foodelicious.herokuapp.com/).
 
+ - User account
+	> User can create an account to add, rate and review restaurants. From his account he can view his reviews' history or edit them. Moreover he can update email and password, and upload profil picture.
+
+- Authentification 
+	> Sign up / Sign in / Sign out with **encrypted password** stored in database.
+	
+- Vuex Store
+	>Is used to handle data.
+
 -  Middleware 
 	 >User's credentials are checked before protected routes.
 
 - Cookies and JSON Web Tokens
 	> Are used to manage **Authorization**
-
-- Vuex Store
-	>Is used to handle data.
-
- - User account
-	> You can create your account in order to add, rate and review restaurants.
 	
 -   Database Schemas and Document Relationships
-	> Three models are used and managed with [Mongoose](https://mongoosejs.com/) : User, Store and Reviews.
+	> Three models are used and managed with **Mongoose** : User, Store and Reviews.
 	
 -  REST API endpoints
 	> RESTful API with **Node** and  **Express**.
 
 -  MVC Pattern
+
+- Send emails
+ > Welcome emails, password reset flow and cancellation emails are sent with **SendGrid** 
