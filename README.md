@@ -57,7 +57,10 @@ Here are the main features covered by this app :
 	> All restaurants are set on a bounded and centered Google  [map](https://foodelicious.herokuapp.com/carte). When the user clicks the marker, a custom info window appears. 
 
 -   Search bar
+	> Search a store by name, location or tags. Results are sorted by relevance.
 
-- Tags filtering
+- Advanced DB Queries and Tags filtering
+	> Sort and display restaurants by tags
 
 -   Pagination
+	 > 6 additional restaurants are loaded on scroll (infinite-content page)
