@@ -16,7 +16,7 @@ Here are the main features covered by this app :
 	> User can create an account to add, rate and review restaurants. From his account he can view his reviews' history or edit them. Moreover he can update email and password, and upload profil picture.
 
 -  Multiple files Uploading
- > Upload many restaurant photos or user's avatar picture.
+	 > Upload many restaurant photos or user's avatar picture.
 
 - Image Resizing 
 	 > User's avatar picture is resized and converted to png if needed.
@@ -53,8 +53,11 @@ Here are the main features covered by this app :
 -   Geocoding Addresses 
 	 > Restaurants coordinates are getting from **Google Places API** and **Google Geocoding API**
 
--   Custom map and cursor
+-   Custom map and markers
+	> All restaurants are set on a bounded and centered Google  [map](https://foodelicious.herokuapp.com/carte). When the user clicks the marker, a custom info window appears. 
 
 -   Search bar
+
+- Tags filtering
 
 -   Pagination
