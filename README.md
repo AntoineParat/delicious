@@ -46,7 +46,7 @@ Here are some of the main features covered by this app :
 -   Database Schemas and Document Relationships
 	> Three models are used and managed with **Mongoose** : User, Store and Reviews.
 	
--  REST API endpoints
+-  REST API
 	> RESTful API with **Node** and  **Express**.
 
 -  MVC Pattern
